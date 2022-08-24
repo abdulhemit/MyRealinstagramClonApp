@@ -1,50 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/id_layout_parent_homeFrag"
     tools:context=".Fragments.HomeFragment">
 
-  <com.google.android.material.appbar.AppBarLayout
-      android:id="@+id/app_bar_layout"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:background="@color/white">
-      <androidx.appcompat.widget.Toolbar
-          android:id="@+id/home_toolbar"
-          android:layout_width="match_parent"
-          android:layout_height="50dp"
-          >
-          <RelativeLayout
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              >
 
-              <ImageView
-                  android:layout_width="150dp"
-                  android:layout_height="50dp"
-                  android:src="@drawable/instagram"
+    <LinearLayout
+        android:id="@+id/linearlayout_home_frag"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        >
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
 
-                  />
+            android:background="@color/white">
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/home_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
 
-              <ImageView
-                  android:id="@+id/homeFragmentSendIcon"
-                  android:layout_width="60dp"
-                  android:layout_height="40dp"
-                  android:layout_alignParentRight="true"
-                  android:layout_margin="10dp"
-                  android:src="@drawable/send_icon" />
-          </RelativeLayout>
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/instagram"
 
-      </androidx.appcompat.widget.Toolbar>
-  </com.google.android.material.appbar.AppBarLayout>
+                        />
+
+                    <ImageView
+                        android:id="@+id/homeFragmentSendIcon"
+                        android:layout_width="60dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/send_icon" />
+                </RelativeLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+    </LinearLayout>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/homeFragmentRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/app_bar_layout"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/linearlayout_home_frag"
+        app:layout_constraintBottom_toBottomOf="parent"
 
         />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
