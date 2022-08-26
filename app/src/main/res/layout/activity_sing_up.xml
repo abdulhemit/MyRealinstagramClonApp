@@ -64,16 +64,15 @@
         android:id="@+id/password_login"
         android:layout_width="match_parent"
         android:layout_height="55dp"
+        android:layout_below="@id/email_login"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
         android:background="@drawable/inputs_background"
         android:hint="Password..."
-        android:padding="10dp"
-        android:textSize="20sp"
-        android:layout_below="@id/email_login"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
         android:inputType="textPassword"
-        />
+        android:padding="10dp"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/signup_btn"
@@ -84,7 +83,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
         android:backgroundTint="@android:color/white"
-        android:text="Sign Up"
+        android:text="Register"
         android:textAllCaps="false"
         android:textColor="@android:color/black"
         android:textSize="20dp" />

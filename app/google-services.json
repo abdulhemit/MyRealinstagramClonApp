@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "50139927745",
+    "project_id": "myrealinstagramcloneapp",
+    "storage_bucket": "myrealinstagramcloneapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:50139927745:android:301c7562c4f95d5efef040",
+        "android_client_info": {
+          "package_name": "com.example.myrealinatagremclonapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "50139927745-e5od1lt6s2j09uq7vik0r5ol604st84u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5KOH5Jd28_rw4eTtw6MnzOuP0k6QimPA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "50139927745-e5od1lt6s2j09uq7vik0r5ol604st84u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
