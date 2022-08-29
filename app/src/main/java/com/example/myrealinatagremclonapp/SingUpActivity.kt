@@ -63,8 +63,8 @@ class SingUpActivity : AppCompatActivity() {
 
         val userMap = HashMap<String,Any>()
         userMap["uid"] = currentUserId
-        userMap["fullName"] = fullName
-        userMap["userName"] = userName
+        userMap["fullName"] = fullName.toLowerCase()
+        userMap["userName"] = userName.toLowerCase()
         userMap["email"] = email
         userMap["bio"] = "Hey i am using coding cafe Instagram Clone App."
         userMap["image"] = "https://firebasestorage.googleapis.com/v0/b/myrealinstagramcloneapp.appspot.com/o/Default%20Images%2Fphoto1607960843.jpeg?alt=media&token=2263ed18-01c5-46e0-8c3b-6148f7402dd8"
