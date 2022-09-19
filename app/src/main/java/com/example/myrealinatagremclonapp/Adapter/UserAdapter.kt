@@ -1,9 +1,13 @@
 package com.example.myrealinatagremclonapp.Adapter
 
+import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myrealinatagremclonapp.Fragments.ProfileFragment
 import com.example.myrealinatagremclonapp.Model.User
 import com.example.myrealinatagremclonapp.R
 import com.example.myrealinatagremclonapp.databinding.LayoutUserItemSearchBinding
@@ -34,6 +38,15 @@ class UserAdapter (var mUser: List<User>, var isFragment : Boolean = false):Recy
 
         checkFollowingStatus(mUser.get(position).uid,holder.binding.followBtn)
         var user = mUser[position]
+        holder.itemView.setOnClickListener(View.OnClickListener {
+            val pref = holder.itemView.context.getSharedPreferences("PREFS", Context.MODE_PRIVATE).edit()
+            pref.putString("profileId",user.uid)
+            pref.apply()
+
+            (holder.itemView.context as FragmentActivity).supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container,ProfileFragment()).commit()
+        })
+
         holder.binding.followBtn.setOnClickListener {
             if(holder.binding.followBtn.text.toString() == "Follow")
             {

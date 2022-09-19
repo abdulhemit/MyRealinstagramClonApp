@@ -21,17 +21,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 >
+
                 <TextView
                     android:id="@+id/profile_fragment_userName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@android:color/black"
-                    android:text="userName"
-                    android:textSize="18sp"
-                    android:maxLines="1"
-                    android:textStyle="bold"
                     android:layout_centerVertical="true"
-                    />
+                    android:maxLines="1"
+                    android:text="userName"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
                 <ImageView
                     android:id="@+id/options_view"
                     android:layout_width="30dp"
@@ -183,10 +183,10 @@
                     android:textStyle="bold"
                     />
                 <TextView
-                    android:id="@+id/dio_profile_frag"
+                    android:id="@+id/bio_profile_frag"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="dio"
+                    android:text="Bio"
                     android:textStyle="bold"
                     android:textSize="13sp"
                     />
