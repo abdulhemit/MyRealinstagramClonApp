@@ -49,11 +49,54 @@ class ProfileFragment : Fragment() {
             binding.editProfileBtn.text = "Edit Profile"
         }else if (profileId != firebaseUser.uid)
         {
+
+            //
             checkFollowAndFollowingButtonStatus()
         }
 
+
+        //profile edit button islemleri
         binding.editProfileBtn.setOnClickListener {
-            startActivity(Intent(requireContext(),AccountSettingsActivity::class.java))
+            //startActivity(Intent(requireContext(),AccountSettingsActivity::class.java))
+            val getButtonText = binding.editProfileBtn.text.toString()
+            when {
+                getButtonText == "Edit Profile" -> startActivity(Intent(requireContext(),AccountSettingsActivity::class.java))
+
+                // kullaniciyi takip etmek icin follow and following button click
+                getButtonText == "Follow" -> {
+                     firebaseUser.uid.let { it1 ->
+                        FirebaseDatabase.getInstance().reference
+                            .child("Follow").child(it1.toString())
+                            .child("Following").child(profileId)
+                            .setValue(true)
+                    }
+                     firebaseUser.uid.let { it1 ->
+                        FirebaseDatabase.getInstance().reference
+                            .child("Follow").child(profileId)
+                            .child("Followers").child(it1.toString())
+                            .setValue(true)
+                    }
+                }
+
+                getButtonText == "Following" -> {
+                    firebaseUser.uid.let { it1 ->
+                        FirebaseDatabase.getInstance().reference
+                            .child("Follow").child(it1.toString())
+                            .child("Following").child(profileId)
+                            .removeValue()
+                    }
+                    firebaseUser.uid.let { it1 ->
+                        FirebaseDatabase.getInstance().reference
+                            .child("Follow").child(profileId)
+                            .child("Followers").child(it1.toString())
+                            .removeValue()
+                    }
+                }
+                else -> {
+
+                }
+            }
+
         }
 
         getFollowing()
