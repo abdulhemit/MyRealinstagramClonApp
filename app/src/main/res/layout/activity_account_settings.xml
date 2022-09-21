@@ -55,18 +55,18 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:src="@drawable/profile" />
+
     <TextView
         android:id="@+id/textview_chacgeImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/image_profile_settingsActivity"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="9dp"
         android:text="change image"
-        android:textStyle="bold"
         android:textColor="@color/MyColorPrimary"
         android:textSize="16sp"
-        android:layout_marginTop="9dp"
-        />
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/edit_fullName"
